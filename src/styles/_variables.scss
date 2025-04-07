@@ -1,0 +1,36 @@
+$primary: #3E8EDE; //soft blue
+$secondary: #8C9EFF; //Lavender gray
+$accent: #9FFFCB; //Fresh Mint
+$bg-color: #F9FAFB; //almost white
+$text-dark: #1F2937; //charcoal
+$muted-text: #6B7280; //Cool gray
+
+
+//FONTS
+$font-heading: 'Outfit', sans-serif;
+$font-body: 'Nunito', sans-serif;
+
+
+
+body{
+    padding: 0;
+    margin: 0 auto;
+    font-family: $font-body;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $text-dark;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-heading;
+    font-weight: 600;
+    margin: 0 0 0.5em;
+    color: #111;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }

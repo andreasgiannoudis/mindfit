@@ -1,0 +1,102 @@
+
+.pricing {
+  padding: 4rem 2rem;
+  background-color: $bg-color;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.pricing__container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pricing__card {
+  background-color: white;
+  border: 2px solid $muted-text;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background-image: linear-gradient(to top, #ffffff, #f9fafa);
+  transition: all 0.3s ease;
+  &:hover {
+    border-color: $primary;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  &--featured {
+    position: relative;
+    z-index: 2;
+    border-color: $primary;
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+    @media (max-width: 768px) {
+      transform: scale(1);
+      box-shadow: none;
+    }
+  }
+
+  .pricing__badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $primary;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+  }
+
+  .pricing__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $text-dark;
+    margin-bottom: 1rem;
+  }
+
+  .pricing__price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+
+    li {
+      font-size: 1rem;
+      color: $muted-text;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .pricing__cta {
+    display: inline-block;
+    background-color: $primary;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+  }
+}
