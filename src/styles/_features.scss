@@ -1,14 +1,19 @@
-
 .features {
   padding: 4rem 2rem;
-  background-color: white;
+  background: linear-gradient(45deg, #f0f4f8, hsl(212, 59%, 94%), #f8f9fc);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+  position: relative;
+  z-index: 1;
 
   &__header {
     text-align: center;
     margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
 
     h2 {
-      font-size: 2rem;
+      font-size: 2.8rem;
       color: $text-dark;
       margin-bottom: 1rem;
     }
@@ -25,6 +30,8 @@
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
   }
 
   &__card {
@@ -34,10 +41,12 @@
     padding: 2rem;
     text-align: center;
     transition: transform 0.35s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    z-index: 3;
 
     &:hover {
       transform: translateY(-6px);
-      box-shadow: 0 5px 20px $primary;
+      box-shadow: 0 5px 20px $accent;
     }
 
     h3 {
@@ -63,5 +72,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  // Gradient background animation
+  @keyframes gradientBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }

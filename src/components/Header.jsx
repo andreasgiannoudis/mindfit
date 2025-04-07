@@ -1,9 +1,28 @@
-import React from 'react';
-import mindfitlogo from '/src/assets/images/mind-fit-logo.png'
+import React, { useState, useEffect } from 'react';
+import mindfitlogo from '/src/assets/images/mind-fit-logo.png';
 
 const Header = () => {
+  const [show, setShow] = useState(true);
+  let lastScrollY = 0;
+
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      setShow(false); // scrolling down
+    } else {
+      setShow(true); // scrolling up
+    }
+    lastScrollY = window.scrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${!show ? 'header--hidden' : ''}`}>
       <div className="header__container">
         <div className="header__logo">
           <img src={mindfitlogo} alt="Mind Fit Logo" />
