@@ -1,11 +1,34 @@
 .how-it-works {
-  padding: 4rem 2rem;
+  position: relative;
+  padding: 6rem 2rem;
   background-color: $bg-color;
   text-align: center;
+  overflow: hidden;
+
+  &__wave {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    left: 0;
+    z-index: 0;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+    }
+  }
+
+  .wave-bottom {
+    bottom: 0;
+  }
 
   &__header {
     max-width: 600px;
     margin: 0 auto 3rem;
+    position: relative;
+    z-index: 1;
 
     h2 {
       font-size: 2.8rem;
@@ -24,21 +47,22 @@
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__tilt {
+    width: 280px;
   }
 
   &__step {
-    background-color: white;
+    background: linear-gradient(to top, #ffffff, #f9fafa);
     border: 1px solid #e5e7eb;
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 2rem;
-    width: 280px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
-    background-image: linear-gradient(to top, #ffffff, #f9fafa);
-
-    &:hover {
-      transform: translateY(-6px);
-    }
+    text-align: center;
 
     h3 {
       margin-top: 1rem;

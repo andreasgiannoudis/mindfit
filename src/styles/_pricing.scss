@@ -3,6 +3,7 @@
   background-color: $bg-color;
   gap: 2rem;
   flex-wrap: wrap;
+  
 
   .pricing__intro {
     text-align: center;
@@ -38,7 +39,7 @@
   padding: 2rem;
   width: 250px;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   background-image: linear-gradient(to top, #ffffff, #f9fafa);
   transition: all 0.4s ease, box-shadow 0.3s ease;

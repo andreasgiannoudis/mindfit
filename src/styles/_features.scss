@@ -5,6 +5,11 @@
   animation: gradientBackground 15s ease infinite;
   position: relative;
   z-index: 1;
+  // width: calc(100% - 60px);
+  // margin: auto;
+  // border-radius: 20px;
+  // margin-top: 30px;
+  // margin-bottom: 20px;
 
   &__header {
     text-align: center;
@@ -43,23 +48,57 @@
     transition: transform 0.35s ease-in-out, box-shadow 0.3s ease-in-out;
     position: relative;
     z-index: 3;
+    overflow: hidden;
+  
+    // background lines
+    &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 30 C 50 60, 150 0, 200 30" stroke="%23d0dce5" stroke-width="1" fill="none" opacity="0.6"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+  }
 
+  &::before {
+    top: -10px;
+    left: -10px;
+    transform: rotate(-10deg);
+  }
+
+  &::after {
+    bottom: -10px;
+    right: -10px;
+    transform: rotate(-170deg);
+  }
+
+  * {
+    position: relative;
+    z-index: 1;
+  }
+  
     &:hover {
       transform: translateY(-6px);
       box-shadow: 0 5px 20px $accent;
     }
-
+  
     h3 {
       font-size: 1.2rem;
       color: $text-dark;
       margin: 1rem 0 0.5rem;
     }
-
+  
     p {
       font-size: 0.95rem;
       color: $muted-text;
     }
   }
+  
 
   &__icon {
     font-size: 2rem;
