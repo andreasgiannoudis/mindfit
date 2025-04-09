@@ -13,9 +13,9 @@ const Pricing = () => {
       case "basic":
         return isAnnual ? "$190 / year" : "$19 / month";
       case "standard":
-        return isAnnual ? "$260 / year" : "$29 / month";
+        return isAnnual ? "$290 / year" : "$29 / month";
       case "premium":
-        return isAnnual ? "$450 / year" : "$49 / month";
+        return isAnnual ? "$490 / year" : "$49 / month";
       default:
         return "$0";
     }

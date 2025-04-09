@@ -4,5 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+<<<<<<< HEAD
   base: "/adnreasgiannoudis/mindfit/"
+=======
+>>>>>>> parent of da862a6 (files for deploy)
 })
