@@ -27,7 +27,6 @@ const Hero = () => {
           <motion.a
             href="#newsletter"
             className="hero__btn hero__btn--primary"
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
             Join Waitlist
@@ -35,7 +34,6 @@ const Hero = () => {
           <motion.a
             href="#how-it-works"
             className="hero__btn hero__btn--secondary"
-            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
             Watch Demo

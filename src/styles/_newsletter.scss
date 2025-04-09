@@ -1,0 +1,69 @@
+.newsletter {
+    padding: 4rem 2rem;
+    // background-color: #f3f6f9;
+    background: linear-gradient(45deg, #f0f4f8, hsl(212, 59%, 94%), #f8f9fc);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+    text-align: center;
+  
+    &__content {
+      max-width: 600px;
+      margin: 0 auto;
+  
+      h2 {
+        font-size: 2.2rem;
+        color: $text-dark;
+        margin-bottom: 0.75rem;
+      }
+  
+      p {
+        color: $muted-text;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+    }
+  
+    &__form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+  
+      input[type="email"] {
+        flex: 1;
+        min-width: 250px;
+        padding: 0.75rem 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+  
+        &:focus {
+          border-color: $accent;
+          outline: none;
+        }
+      }
+  
+      button {
+        white-space: nowrap;
+        background-color: $primary;
+        color: #fff;
+        border: 2px solid transparent;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      
+        &:hover {
+          background-color: transparent;
+          color: $text-dark;
+          box-shadow: 0 0 0 2px $accent;
+        }
+      }
+      
+      
+    }
+  }
+  
