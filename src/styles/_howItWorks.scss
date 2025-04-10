@@ -63,6 +63,7 @@
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
     text-align: center;
+    width: 100%; // Full width on small screens
 
     h3 {
       margin-top: 1rem;
@@ -75,6 +76,7 @@
       color: $muted-text;
       font-size: 0.95rem;
     }
+
   }
 
   &__icon {
@@ -88,5 +90,69 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  // Media Queries for responsiveness
+  @media (max-width: 768px) {
+    padding: 4rem 2rem;
+
+    .how-it-works__header {
+      h2 {
+        font-size: 2.4rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .how-it-works__steps {
+      gap: 1.5rem;
+      flex-direction: column; // Stack steps vertically on smaller screens
+      align-items: center;
+    }
+
+    .how-it-works__tilt {
+      width: 100%;
+      max-width: 400px; // Make tilt section responsive
+    }
+
+    .how-it-works__step {
+      width: 100%;
+      max-width: 400px; // Limit width of each step
+      margin-bottom: 2rem;
+    }
+
+    .how-it-works__wave {
+      height: 400px; // Adjust wave height on smaller screens
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 3rem 1.5rem;
+
+    .how-it-works__header {
+      max-width: 100%;
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .how-it-works__steps {
+      gap: 1rem;
+    }
+
+    .how-it-works__step {
+      width: 100%;
+      padding: 1.5rem;
+    }
+
+    .how-it-works__wave {
+      height: 300px; // Smaller wave height on very small screens
+    }
   }
 }

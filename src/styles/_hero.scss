@@ -3,12 +3,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 2rem;
+  padding: 4rem;
   background-color: $bg-color;
 
   @media (max-width: 768px) {
     flex-direction: column-reverse;
+    align-items: center;
     text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
   }
 
   &__background {
@@ -37,6 +43,13 @@
       background: $primary;
       top: -100px;
       right: -100px;
+
+      @media (max-width: 768px) {
+        width: 600px;
+        height: 500px;
+        top: -80px;
+        right: -80px;
+      }
     }
 
     &::after {
@@ -46,13 +59,20 @@
       bottom: -80px;
       right: -80px;
       animation-delay: 2s;
+
+      @media (max-width: 768px) {
+        width: 500px;
+        height: 400px;
+        bottom: -60px;
+        right: -60px;
+      }
     }
   }
 
   &__content,
   &__image-container {
     position: relative;
-    z-index: 1;
+    z-index: 2; // increased to make sure it's above the background
   }
 
   &__content {
@@ -73,6 +93,14 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+
+    @media (max-width: 768px) {
+      font-size: 4rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 3rem;
+    }
   }
 
   &__subtitle {
@@ -80,6 +108,16 @@
     color: $muted-text;
     margin-bottom: 2rem;
     max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.95rem;
+    }
   }
 
   &__buttons {
@@ -89,6 +127,7 @@
     @media (max-width: 480px) {
       flex-direction: column;
       align-items: center;
+      gap: 0.75rem;
     }
   }
 
@@ -101,6 +140,13 @@
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+    width: fit-content;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      text-align: center;
+    }
+
     &--primary {
       background-color: $primary;
       color: white;
@@ -109,7 +155,7 @@
         background-color: transparent;
         border: 2px solid $accent;
         color: $text-dark;
-     }
+      }
     }
 
     &--secondary {
@@ -126,18 +172,33 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-left: 2rem;
 
     @media (max-width: 768px) {
       padding-left: 0;
+      padding-right: 0;
       margin-bottom: 2rem;
+      width: 100%;
     }
   }
 
   &__image {
-    max-width: 92%;
+    display: block;
+    width: 100%;
+    max-width: 500px;
     height: auto;
+    object-fit: contain;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      max-width: 90%;
+    }
   }
+
 }
 
 @keyframes float {
