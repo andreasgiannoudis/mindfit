@@ -19,6 +19,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: #1f2937;
+
     img {
       max-width: 55px;
     }
@@ -28,56 +29,121 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #f9fafb;
+      flex-direction: column;
+      align-items: flex-end; // ⬅️ Aligns links to the right
+      padding: 1rem 2rem;
+      gap: 1rem;
+      transform: translateY(-200%);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      &--open {
+        transform: translateY(0%);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   &__link {
-  position: relative;
-  text-decoration: none;
-  color: #1f2937;
-  transition: color 0.3s ease;
-  font-size: 1.05rem;
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0%;
-    height: 2.5px;
-    background-color: $primary;
-    transition: width 0.3s ease-in-out;
-  }
-
-  &:hover {
-    color: #3e8ede;
+    position: relative;
+    text-decoration: none;
+    color: #1f2937;
+    transition: color 0.3s ease;
+    font-size: 1.05rem;
 
     &::after {
-      width: 100%;
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2.5px;
+      background-color: $primary;
+      transition: width 0.3s ease-in-out;
     }
-  }
-
-  &--cta {
-    padding: 0.5rem 1rem;
-    background-color: #3e8ede;
-    color: white;
-    border: 2px solid transparent;
-    border-radius: 50px;
-    transition: all 0.3s ease-in-out;
 
     &:hover {
-      background-color: transparent;
-      border: 2px solid $accent;
-      color: $text-dark;
+      color: #3e8ede;
+
+      &::after {
+        width: 100%;
+      }
     }
 
-    &::after {
-      display: none;
+    &--cta {
+      padding: 0.5rem 1rem;
+      background-color: #3e8ede;
+      color: white;
+      border: 2px solid transparent;
+      border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: transparent;
+        border: 2px solid $accent;
+        color: $text-dark;
+      }
+
+      &::after {
+        display: none;
+      }
     }
   }
-}
 
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 20;
+    background: none;
+    border: none;
+    padding: 0;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background-color: #1f2937;
+      transition: all 0.3s ease;
+    }
+
+    &.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
 
   &--hidden {
-    transform: translateY(-100%); /* This will move the header off-screen */
+    transform: translateY(-100%);
+  }
+
+  @media (max-width: 768px) {
+    &__container {
+      width: 100%;
+    }
+
+    &__hamburger {
+      display: flex;
+    }
+
+    &__nav {
+      display: flex;
+    }
   }
 }
